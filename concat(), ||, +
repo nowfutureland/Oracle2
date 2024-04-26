@@ -1,0 +1,36 @@
+-- concat(), ||, +
+
+select * from pc_emp;
+
+select concat('못생긴', ' 지민이'), '잘생긴'||' 정연택'
+from dual;
+
+select tel from pc_emp;
+
+-- 010-8956-9721, substr(텍스트, 시작위치, 몇글자셀지) - mid(텍스트, 시작위치, 몇글자셀지)
+select 0||substr(tel,1,2)||'-'||substr(tel,3,4)||'-'||substr(tel,7,20),
+    concat(0,
+        concat(substr(tel,1,2),
+            concat('-',
+                concat(substr(tel,3,4),
+                    concat('-',
+                        substr(tel,7,20))))))
+from pc_emp;
+
+-- 사원번호 0번 정연택은 직책이 boss다.
+--     (emp_no)(name)       (job)
+-- '사원번호 ' ||%d|| '번 ' ||%s|| '은 직책이 ' ||%s|| '다.'
+select '사원번호 ' ||emp_no|| '번 ' ||name|| '은 직책이 ' ||job|| '다.'
+from PC_EMP;
+
+select * from pc_member;
+-- '아이디 '||ㅇㅇ||'님의 생일은 '||ㅇㅇ||'이다.'
+--            id                 birth
+
+-- '생일은 '||ㅇㅇ||' 월 '||ㅇㅇ||'일이다.'
+--  to_char(birth, 'MM')    to_char(birth, 'DD')    
+
+select '아이디 '||id||'님의 생일은 '
+        ||to_char(birth, 'MM')||'월 '
+        ||to_char(birth, 'DD')||'일이다.'
+from pc_member;
