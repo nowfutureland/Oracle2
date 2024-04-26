@@ -1,0 +1,26 @@
+-- max(), min(), sum(), count(), avg()
+
+-- pc_use 테이블에서 쓴돈(total)의 평균(avg)을 출력하시오.
+-- (id별로)
+select avg(total)
+from pc_use;
+
+select id, to_char(round(avg(total), 2), 'fm9990.00')
+    , to_char(avg(total), 'fm9990.00')
+from pc_use
+group by id;
+
+-- pc_use 테이블에서 음식을 1개라도 시킨 회원의 수를 구하시오.
+select count(fd1)
+from pc_use;
+-- 중복 제거
+select DISTINCT fd1, id
+from pc_use
+where fd1 is not null;
+
+select count(DISTINCT fd1)
+from pc_use;
+
+-- abs, sqrt
+select abs(-18) 절대값, sqrt(8) 제곱근
+from dual;
