@@ -1,0 +1,12 @@
+select id, name, to_char(sysdate, 'yyyy-mm-dd'), to_char(birth, 'yyyy-mm-dd'),
+    decode(sign(round(months_between(sysdate, birth)31)),
+            -1, abs(round(months_between(sysdate, birth)31))'일 남으셨네요',
+            1, round(months_between(sysdate, birth)*31)'일 지나셨네요')
+from pc_member;
+
+select sign(18), sign(0), sign(-18), sign(-0)
+from dual;
+select substr(lpad(start_time, 4, 0), 1, 2)
+       ':'
+       substr(lpad(start_time, 4, 0), 3, 2)
+from pc_use;
