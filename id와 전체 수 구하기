@@ -1,0 +1,13 @@
+-- pc_member 테이블에서 id와 전체 수 (*)를 구해라 
+select id, count(*)
+from pc_member
+group by id;
+
+select decode(gender, 1,'남자',2,'여자','아직모름'), count(*)
+from pc_member
+group by gender;
+
+select count(gender)
+from pc_member
+where gender=2;
+
