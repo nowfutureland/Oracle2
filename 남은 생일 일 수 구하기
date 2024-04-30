@@ -1,0 +1,10 @@
+select id, name, to_char(sysdate, 'yyyy-mm-dd'), to_char(birth, 'yyyy-mm-dd'),
+    to_char(sysdate, 'yyyy-mm-dd')||'-'||to_char(birth,'mm-dd'),
+    round(months_between(to_char(sysdate,'yyyy')||'-'||to_char(birth,'mm-dd'),sysdate)*30,1) 일수,
+    sign(round(months_between(to_char(sysdate,'yyyy')||'-'||to_char(birth,'mm-dd'),sysdate)*30,1))사인,
+    --음수일때 양수일때 따로 계산
+    --decode(컬럼, 조건1,값1...)
+    decode(sign(round(months_between(to_char(sysdate,'yyyy')||'-'||to_char(birth,'mm-dd'),sysdate)*30,1)),
+    1,round(months_between(to_char(sysdate,'yyyy')||'-'||to_char(birth,'mm-dd'),sysdate)*30,1)||'일 남았네',
+    -1,abs(round(months_between(to_char(sysdate,'yyyy')||'-'||to_char(birth,'mm-dd'),sysdate)*30,1))||'일 났네')결과
+from pc_member;
