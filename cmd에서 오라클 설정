@@ -1,0 +1,4 @@
+-- hr 계정 활성화하기(cmd에서 hr계정 활성화하기)
+- cmd에서 sqlplus -> system/1234
+- alter user hr account unlock;
+- alter user hr identified by 1234;
