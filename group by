@@ -1,0 +1,41 @@
+select *
+from pc_member;
+
+select id, count(*)
+from pc_member;
+-- pc_member 테이블에서 id와 전체 수(*)를 구해라
+select id
+from pc_member;
+
+select id, count(*)
+from pc_member
+group by id;
+
+select decode(gender, 1, '남자', 2, '여자', '아직모름') 성별, count(distinct gender)
+from pc_member
+group by gender;
+
+select count(gender)
+from pc_member
+where gender = 1
+union all
+select count(gender)
+from pc_member
+where gender = 2
+union all
+select count(gender)
+from pc_member
+where gender = 3;
+
+-- 이용(pc_use) 테이블에서 아이디(id)별로 쓴돈(total)의 합계를 구해라.
+-- 단 쓴돈의 합계가 5000원 이상인 컬럼만 조회하시오.
+
+select id, sum(total)   -- 4
+from pc_use             -- 1
+where total >= 5000     -- 2
+group by id;            -- 3
+
+select id, sum(total)
+from pc_use
+group by id
+having sum(total) >= 5000;
