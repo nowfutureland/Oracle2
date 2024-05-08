@@ -1,0 +1,7 @@
+select * from pc_use;
+
+--이용 테이블의 모든 정보와 직원의 모든 정보를  출력
+select *
+from pc_use INNER JOIN pc_emp
+on pc_use.name = pc_emp.name
+order by pc_use.name;
