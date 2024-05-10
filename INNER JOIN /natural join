@@ -1,0 +1,3 @@
+-- natural join은 컬럼명이 같아야 한다
+select id, name, emp_no
+from pc_use natural join pc_emp;
