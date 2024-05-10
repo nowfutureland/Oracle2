@@ -1,0 +1,4 @@
+-- 존재하지 않는 것만
+select u.id, u.fd1, m.menu_no, m.menu_name
+from pc_use u left outer join pc_menu m
+on u.fd1 = m.menu_no;
