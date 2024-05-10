@@ -1,0 +1,4 @@
+-- 다
+select u.id, u.fd1, m.menu_no, m.menu_name
+from pc_use u full outer join pc_menu m
+on u.fd1 = m.menu_no;
