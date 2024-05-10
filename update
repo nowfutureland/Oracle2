@@ -1,0 +1,5 @@
+--update 테이블명 set 걸럼명=값
+--where 걸럼명 = 값
+update pc_menu
+set menu_no=7 
+where menu_no = 6;
