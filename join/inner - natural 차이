@@ -1,0 +1,4 @@
+-- join-테이블을 묶는다
+-- inner join - 컬럼 기재
+-- natural join - 컬럼명이 같은것끼리
+-- outer join - left, right, full
