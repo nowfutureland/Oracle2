@@ -1,0 +1,7 @@
+select * from pc_emp;
+select * from pc_use;
+
+-- 직원, 직급별로 서빙한 금액(total)의 합계
+select name,sum(total)
+from pc_use
+group by name;
