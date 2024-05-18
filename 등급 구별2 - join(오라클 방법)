@@ -1,0 +1,5 @@
+-- 오라클 방법(inner join)
+select e.name, e.job, sum(u.total)
+from pc_use u, pc_emp e
+where u.name = e.name
+group by e.name, e.job;
