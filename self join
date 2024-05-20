@@ -1,0 +1,7 @@
+-- 사원 테이블(employees)에서 사원번호(employee_id)와 '성(last_name)+이름(first_name)',
+-- 상사번호(manager_id)와 상사의 '성(last_name)+이름(first_name)'을 출력하시오.
+select e.employee_id, e.last_name||' '||e.first_name, e.manager_id,
+    m.last_name||' '||m.first_name
+from employees e full outer join employees m
+on e.manager_id = m.employee_id
+order by e.employee_id;
