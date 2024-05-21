@@ -1,0 +1,9 @@
+--pc회원 테이블에서 이름이 '김태호'인 사람들의
+--성별을 가진 사람들의 모든 정보 조회
+select *
+from pc_member
+where gender in (
+                select gender
+                from pc_member
+                where name='김태호'
+                );
