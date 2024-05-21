@@ -1,0 +1,9 @@
+--pc방 직원 테이블에서 '이윤건'(name)과 같은 직급을 가지고 있는
+--직원들의 모든 정보를 조회
+select *
+from pc_emp
+where job = (
+            select job
+            from pc_emp
+            where name = '이윤건'
+                );
