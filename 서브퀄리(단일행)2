@@ -1,0 +1,9 @@
+--pc회원 테이블에서 이름이 '곽권'과 같은
+--성별을 가진 사람들의 모든 정보 조회
+select *
+from pc_member
+where gender = (
+                select gender
+                from pc_member
+                where name='곽권'
+                );
