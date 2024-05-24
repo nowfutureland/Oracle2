@@ -1,0 +1,5 @@
+--사원 테이블에서 전 직원의 평균 급여보다 적게 받는
+--사원들의 모든 정보 출력
+select *
+from employees
+where salary < (select avg(salary) from employees);
