@@ -1,0 +1,19 @@
+--성(first_name)이 'Guy'인 친구와 같은 부서인 사원의 급여보다
+--많은 급여를 받는 사원의 모든 정보 출력
+select salary
+from employees
+where department_id = (select department_id
+                        from employees
+                        where first_name = 'Guy'
+                        );
+                        
+select *
+from employees
+where salary in (select salary
+                from employees
+                where department_id = (select department_id
+                                        from employees
+                                        where first_name = 'Guy'
+                                        ));
+
+--(in,any,all,exists)
