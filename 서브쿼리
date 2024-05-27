@@ -1,0 +1,13 @@
+--부서별 평균 급여보다 많이 받는 사원의 모든 정보 조회
+select e1.employee_id, e1.salary, e1.department_id
+from employees e1
+where salary > (select  avg(salary)
+                    from employees e2
+                    where e1.department_id = e2.department_id
+                    )
+order by department_id;
+
+select department_id, round(avg(salary))
+from employees
+group by department_id
+order by department_id;
