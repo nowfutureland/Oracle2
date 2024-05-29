@@ -1,0 +1,7 @@
+--사원 테이블과 사원 번호에서 성과 이름,급영,부서번호,부서명을 출력
+--단, 급여가 15000이상인 사원들만 조회
+
+select e.employee_id,e.last_name,e.first_name,e.salary,e.department_id,d.department_name
+from employees e, departments d 
+where e.department_id=d.department_id 
+        and salary >= 10000;
