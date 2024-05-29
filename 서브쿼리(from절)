@@ -1,0 +1,12 @@
+--서브쿼리 : where절(단일행,다중행,다중컬럼,연관)
+--          select절(스칼라 서브쿼리-원자값) 
+--          from절(인라인 뷰(가상테이블(영구적)))
+
+select * from employees;
+select * from departments;
+--사원 테이블과 사원 번호에서 성과 이름,급영,부서번호,부서명을 출력
+--단, 급여가 15000이상인 사원들만 조회
+select e.employee_id,e.last_name,e.first_name,e.salary,e.department_id,d.department_name
+from employees e join departments d on e.department_id=d.department_id
+where salary >= 10000
+order by employee_id;
