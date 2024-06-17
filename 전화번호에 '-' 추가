@@ -1,0 +1,4 @@
+-- 가입일자 -> 2022/05/05 전화번호 -> 010-1111-2222
+select name 이름, to_char(join_date,'YYYY')||'/'||to_char(join_date,'DD')||'/'||to_char(join_date,'MM') 가입일자, 
+'010'||'-'||substr(phone,1,4)||'-'||substr(phone,5,4) 번호
+from member_master;
