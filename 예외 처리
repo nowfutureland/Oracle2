@@ -1,0 +1,24 @@
+package jyt_jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class SqlTest {
+
+	public static void main(String[] args) throws Exception {
+			
+		try {
+			//1.드라이버 로드
+			Class.forName("oracle.jdbc.OracleDriver");
+			
+			//2.Connection 객체 만들기
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","sw212","1234");
+			
+			//3.Statement 객체 만들기
+			
+			//4.ResultSet 객체 만들기
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+}
