@@ -1,0 +1,5 @@
+-- 회원 테이블(test_member)의 모든 정보를 조회하시오.
+select * from test_member;
+
+-- 책 테이블(test_book )의 모든 정보를 조회하시오.
+select * from test_book ;
