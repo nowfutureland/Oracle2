@@ -1,0 +1,6 @@
+select * from pc_menu;
+
+-- pc_menu 테이블에서 메뉴명 '제로콜라'의 가격을 2500원으로 변경
+update pc_menu
+set menu_price = 2500
+where menu_name = '제로콜라';
