@@ -1,0 +1,7 @@
+-- 회원 테이블(test_member)에서 가입연도(join_date)별 회원수를 구하시오.
+--  to_char(join_date, 'YYYY')
+select to_char(join_date, 'YYYY') 가입연도, count(*)
+from test_member
+group by to_char(join_date, 'YYYY')
+order by 가입연도 desc;
+-- asc(오름차순-생략가능)/desc(내림차순);
