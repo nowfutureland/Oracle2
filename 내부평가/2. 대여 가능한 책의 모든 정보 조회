@@ -1,0 +1,5 @@
+-- 도서 테이블(test_book)에서 대여가 가능한 책의 모든 정보를 조회하시오.
+select *
+from test_book
+where borrowed_by is null;
+-- is not null / is null
